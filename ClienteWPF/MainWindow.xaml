@@ -1,0 +1,68 @@
+﻿<Window x:Class="ClienteWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteWPF"
+        mc:Ignorable="d"
+        Title="CLIENTE WebApi -WPF" Height="550" Width="625" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="115*"/>
+            <ColumnDefinition Width="502*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="289*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FF263D4D" Grid.ColumnSpan="2">
+            <TextBlock Name="SaludoTextBlock" Foreground="White" FontSize="18" Text="Datos de EMPLEADOS"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="EmpleadoDataGrid" />
+
+                <Grid Grid.Row="1" Background="#FFE4E4E4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="169*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="37*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Label Content="Nombre" Grid.Row="0"  />
+                    <Label Content="Apellidos" Grid.Row="1" />
+                    <Label Content="Edad"  Grid.Row="2"  />
+                    <Label Content="Login"  Grid.Row="3"  />
+                    <Label Content="Password"  Grid.Row="4"  />
+
+                    <TextBox  Width="120"  x:Name="NombreTextBox" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left"  Margin="3" />
+                    <TextBox  Width="120"  x:Name="ApellidosTextBox" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Left"  Margin="3" />
+                    <TextBox Width="120" x:Name="EdadTextBox" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Left" Margin="3" />
+                    <TextBox Width="120" x:Name="LoginTextBox" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Left" Margin="3" />
+                    <PasswordBox Width="120" x:Name="ContraseñaPasswordBox" Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Left" Margin="3"  />
+
+                    <Button Content="Agregar Nuevo"  Width="100" x:Name="AgregarButton" Click="AgregarButton_Click" Height="Auto" Grid.Row="5" Grid.ColumnSpan="2" Margin="3" Background="#FFB0B0B0"/>
+
+                    <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="2"  Background="DimGray">
+                        <Label Content="Id"  Grid.Row="4"/>
+                        <TextBox  Width="180"  x:Name="IdTextBox" Grid.Row="4"  Margin="3" />
+                        <Button Content="Eliminar" Width="75"  x:Name="EliminarBoton" Click="EliminarBoton_Click" Grid.Row="1" Margin="3"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
